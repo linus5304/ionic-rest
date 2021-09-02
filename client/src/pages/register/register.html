@@ -1,0 +1,48 @@
+<ion-header>
+  <h1 class="heading"><p>REGISTER</p></h1>
+</ion-header>
+
+<ion-content padding>
+  <img class="photo" src="../assets/icon/profile.jpg" />
+  <ion-list>
+    <ion-item>
+      <ion-label floating>full name</ion-label>
+      <ion-input type="text" [(ngModel)]="full_name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>username</ion-label>
+      <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>password</ion-label>
+      <ion-input type="password" [(ngModel)]=" pass_word"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>confirm password</ion-label>
+      <ion-input type="password" [(ngModel)]="confirm_password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>email</ion-label>
+      <ion-input type="text" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>phone number</ion-label>
+      <ion-input type="number" [(ngModel)]="phone_number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>gender</ion-label>
+      <ion-select [(ngModel)]="gender.title" [(ngModel)]="gend">
+        <ion-option value="male">male</ion-option>
+        <ion-option value="female">female</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <div class="btn">
+    <button ion-button color="primary" full round (click)="register()">
+      Submit
+    </button>
+    <button ion-button color="light" full round (click)="loginForm()">
+      Sign In
+    </button>
+  </div>
+</ion-content>

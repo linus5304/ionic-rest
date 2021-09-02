@@ -1,0 +1,95 @@
+<!--
+  Generated template for the CreateProductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>CreateProduct</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-item-divider color="primary">
+    <ion-icon name="build" large></ion-icon>
+    product image
+  </ion-item-divider>
+  <ion-fab top right edge>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list>
+      <button ion-fab (click)="pick()">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+      <button ion-fab (click)="getImage()">
+        <ion-icon name="image"></ion-icon>
+      </button>
+    </ion-fab-list>
+  </ion-fab>
+  <p align="center"><img class="photo" src="{{myPhoto}}" /></p>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>name</ion-label>
+      <ion-input type="text" [(ngModel)]="myProduct.title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Description</ion-label>
+      <ion-input type="text" [(ngModel)]="myProduct.Description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>price(in dollars)</ion-label>
+      <ion-input type="number" [(ngModel)]="myProduct.price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>category of product</ion-label>
+      <ion-select type="text" [(ngModel)]="myProduct.category">
+        <ion-option [value]="cat.title" *ngFor="let cat of categories"
+          >{{cat.title}}</ion-option
+        >
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>location of product</ion-label>
+      <ion-select type="text" [(ngModel)]="myProduct.category">
+        <ion-option [value]="city.name" *ngFor="let city of cities"
+          >{{city.name}}</ion-option
+        >
+      </ion-select>
+    </ion-item>
+    <ion-item-divider color="primary">
+      <ion-icon name="build" large></ion-icon>
+      state of product
+    </ion-item-divider>
+    <ion-item>
+      <ion-label floating>state</ion-label>
+      <ion-select [(ngModel)]="myProduct.state">
+        <ion-option value="NEW">NEW</ion-option>
+        <ion-option value="already used">alreaady used</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>mode of acquisition</ion-label>
+      <ion-select [(ngModel)]="myProduct.availability.type">
+        <ion-option value="delivery">delivery</ion-option>
+        <ion-option value="in store">in store</ion-option>
+        <ion-option value="hand to hand">hand to hand</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="myProduct.availability.type==='delivery'">
+      <ion-label floating>delivery fee(in dollars)</ion-label>
+      <ion-input
+        type="number"
+        [(ngModel)]="myProduct.availability.feed"
+      ></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-row>
+    <ion-col offset-1 col-10>
+      <button ion-button full (click)="create(myProduct)" class="btn1" large>
+        create
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

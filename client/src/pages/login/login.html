@@ -1,0 +1,31 @@
+<ion-header>
+  <h1 class="heading"><p>LOGIN</p></h1>
+</ion-header>
+<ion-content padding>
+  <img class="photo" src="../assets/imgs/login5.png" />
+  <ion-list>
+    <ion-item>
+      <ion-label floating>username</ion-label>
+      <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>password</ion-label>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>email</ion-label>
+      <ion-input type="text" [(ngModel)]="email"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div>
+    <button ion-button color="primary" full round (click)="menu()">
+      Sign In
+    </button>
+    <button ion-button color="light" full round (click)="registeForm()">
+      register
+    </button>
+  </div>
+  <p>
+    <i><b>forgot password??</b></i>
+  </p>
+</ion-content>
